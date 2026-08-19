@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html {
+    height: 100%;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: #202023;
+}
+
+body {
+    min-height: 100%;
+    border-inline: calc(50vw - 400px) solid #303033;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    padding-inline: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* font-family: serif; */
+}
+h1 {
+    font-size: 2.4rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+a {
+    color: rgb(191, 215, 223);
+    text-decoration: none;
+}
