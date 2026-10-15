@@ -1,8 +1,3 @@
--- PaperCraft 2D - PaperOS Lua v1.3
--- Sterowanie: A/D lub strzalki = ruch, W/SPACE = skok
--- J = zniszcz blok przed graczem, K = postaw blok
--- 1-4 = wybor bloku, S = zapis, L = wczytanie, R = nowy swiat
--- Uruchom w aplikacji Lua PaperOS z aktywnym canvasem.
 
 local SW, SH = disp.w(), disp.h()
 local TILE = 10
@@ -69,7 +64,7 @@ local function newWorld()
       world[y][x] = b
     end
   end
-  -- Male drzewka
+  
   for x=5,WORLD_W-3,11 do
     local ground = 13 + math.floor(math.sin(x * 0.31) * 2) + math.floor(math.sin(x * 0.13) * 2)
     if getBlock(x,ground) == BLOCK.GRASS then
@@ -188,7 +183,6 @@ local function draw()
     for x=minX,maxX do drawBlock(x,y,getBlock(x,y)) end
   end
 
-  -- gracz
   local sx, sy = math.floor((px-1)*TILE-camX), math.floor((py-1)*TILE-camY)
   disp.fillRect(sx+2,sy+2,6,4,C.skin)
   disp.fillRect(sx+1,sy+6,8,8,C.blue)
@@ -196,7 +190,6 @@ local function draw()
   disp.fillRect(sx+6,sy+13,3,5,C.dark)
   disp.pixel(sx+(facing>0 and 6 or 3),sy+3,C.dark)
 
-  -- pasek interfejsu
   disp.fillRect(0,0,SW,16,disp.rgb(20,30,38))
   disp.text(3,3,"PAPERCRAFT 2D",C.white)
   disp.text(148,3,"X:"..math.floor(px).." Y:"..math.floor(py),C.white)
